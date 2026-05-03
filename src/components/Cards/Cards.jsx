@@ -61,7 +61,7 @@ const Cards = () => {
   const deleteHandler = async (id) => {
     try{
       const token = localStorage.getItem("token");
-      const res = await axios.delete(`${BASE_URL}/jobs/delete/${id}`,
+      await axios.delete(`${BASE_URL}/jobs/delete/${id}`,
         {
             headers: {
             Authorization: `Bearer ${token}`,
