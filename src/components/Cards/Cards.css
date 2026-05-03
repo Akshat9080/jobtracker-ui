@@ -1,0 +1,131 @@
+/* Container */
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+/* Stats Section */
+.stats-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+/* Filter Section */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.filter-btn.active {
+  background: #2C3E50;
+  color: white;
+}
+
+.filter-btn.inactive {
+  background: #ECF0F1;
+  color: black;
+}
+
+/* Add Button */
+.add-btn {
+  background: #27AE60;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+}
+
+/* Job Cards */
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.job-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-info h3 {
+  margin: 0;
+}
+
+.job-role {
+  margin: 5px 0;
+  color: #666;
+}
+
+.job-date {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+}
+
+/* Status */
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 12px;
+}
+
+.status.applied   { background: #F5A623; }
+.status.interview { background: #9B59B6; }
+.status.offer     { background: #27AE60; }
+.status.rejected  { background: #E74C3C; }
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-btn {
+  background: #3498DB;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #E74C3C;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
