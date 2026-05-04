@@ -11,6 +11,7 @@ function Login() {
     username:"",
     password:""
   })
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ function Login() {
 
   const submitHandler = async(e) => {
     e.preventDefault();
-
+    setLoading(true);
     try{
       const res = await axios.post(`${BASE_URL}/auth/login`,formData);
 
@@ -42,6 +43,9 @@ function Login() {
     }
     catch(err){
       toast.error("Looks like you haven't registered. Please register 😄");
+    }
+    finally{
+      setLoading(false);
     }
   }
 
@@ -74,7 +78,18 @@ function Login() {
             onChange={changeHandler} 
           />
 
-          <button type="submit">Login</button>
+          <button type="submit" disabled={loading}>
+            {loading ? (
+          <>
+            <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+            />
+            Please wait...
+          </>
+          ) : ("Login")}
+          </button>
         </form>
 
         <p>

@@ -13,6 +13,7 @@ function Register() {
     email:"",
     password:""
   })
+  const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
 
   const changeHandler = (e) => {
@@ -25,6 +26,7 @@ function Register() {
 
   const submitHandler = async(e) => {
     e.preventDefault();
+    setLoading(true);
     try{
       await axios.post(`${BASE_URL}/auth/register`,formData);
       toast.success("You have registered successfully");
@@ -33,6 +35,9 @@ function Register() {
     catch(err){
       console.log(err);
       toast.error("Registration failed");
+    }
+    finally{
+      setLoading(false);
     }
   }
 
@@ -83,7 +88,18 @@ function Register() {
             onChange={changeHandler}
            />
 
-          <button type="submit">Register</button>
+          <button type="submit" disabled={loading}>
+            {loading ? (
+          <>
+            <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+            />
+            Please wait While Registering...
+          </>
+          ) : ("Register")}
+          </button>
         </form>
 
         <p>
