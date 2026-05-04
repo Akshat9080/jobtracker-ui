@@ -72,3 +72,19 @@
 .auth-right p {
   margin-top: 15px;
 }
+
+.custom-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
